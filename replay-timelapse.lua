@@ -144,7 +144,7 @@ function base_bbox()
   local entities = game.surfaces[1].find_entities_filtered{force = "player"}
   local result = {}
   for _, entity in ipairs(entities) do
-    if entity.type ~= "character" and entity.type ~= "car" and entity.name ~= "crash-site-spaceship" then
+    if entity.type ~= "character" and entity.type ~= "car" and entity.type ~= "entity-ghost" and entity.type ~= "tile-ghost" and entity.name ~= "crash-site-spaceship" then
       result = expand_bbox(entity_bbox(entity), result)
     end
   end
